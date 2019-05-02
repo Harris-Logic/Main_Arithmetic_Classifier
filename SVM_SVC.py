@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 #%matplotlib inline
-work_dir = "A:\\cuckoo_json\\newcsv.csv"
+work_dir = "A:\\cuckoo_json\\new.csv"
 bankdata = pd.read_csv(work_dir) 
 #bankdata.shape 这他娘的是命令行用的代码
 #bankdata.head()
@@ -24,11 +24,12 @@ X = bankdata.drop(droplist, axis=1)
 y = bankdata['class']
 
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30)
 #labels = np.unique(X); print(labels)
 
 from sklearn.svm import SVC
-clf = SVC(kernel='poly',degree=4)
+clf = SVC()  #kernel='rbf'
+#clf = SVC(kernel='poly',degree=4)
 clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 
