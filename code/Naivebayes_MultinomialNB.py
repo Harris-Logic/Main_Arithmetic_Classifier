@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-work_dir = "A:\\cuckoo_json\\new.csv"
+work_dir = "new.csv"
 bankdata = pd.read_csv(work_dir) 
 
 droplist = ['class']
