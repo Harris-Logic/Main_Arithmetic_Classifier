@@ -23,6 +23,7 @@ droplist = ['class']
 X = bankdata.drop(droplist, axis=1)
 y = bankdata['class']
 
+#从这儿开始才是算法，上面是处理输入的数据csv
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30)
 #labels = np.unique(X); print(labels)
